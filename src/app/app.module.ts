@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { Exercicio01Component } from './components/exercicio01/exercicio01.component';
 import { Exercicio02Component } from './components/exercicio02/exercicio02.component';
 import { Exercicio03Component } from './components/exercicio03/exercicio03.component';
+import { Exercicio04Component } from './components/exercicio04/exercicio04.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     Exercicio01Component,
     Exercicio02Component,
-    Exercicio03Component
+    Exercicio03Component,
+    Exercicio04Component
   ],
   imports: [
     BrowserModule
