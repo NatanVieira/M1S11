@@ -1,0 +1,38 @@
+<form>
+    <div class="form-group">
+        <label>Nome</label>
+        <input name="nome" type="text" class="form-control" placeholder="Digite seu nome" [(ngModel)]="nome"/>
+    </div>
+    <div class="form-group">
+        <label>CPF</label>
+        <input name="cpf" type="text" min="11" max="11" class="form-control" placeholder="Digite seu cpf" [(ngModel)]="cpf"/>
+    </div>
+    <div class="form-group">
+        <label>Dia de aniverário</label>
+        <input name="diaAniversario" type="number" max="31" min="1" class="form-control" placeholder="Digite seu dia de aniverário" [(ngModel)]="diaAniversario"/>
+    </div>
+    <div class="form-group">
+        <label>Senha</label>
+        <input name="senha" type="password" class="form-control" placeholder="Digite sua senha" [(ngModel)]="senha"/>
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="mostraInfo = !mostraInfo" *ngIf="mostraInfo">Esconde Informações</button>
+    <button type="submit" class="btn btn-primary" (click)="mostraInfo = !mostraInfo" *ngIf="!mostraInfo">Mostra Informações</button>
+</form>
+<div class="container" *ngIf="mostraInfo">
+    <h1>Dados da Pessoa</h1>
+    <div class="row">
+        <div class="col-3">
+            <p>Nome: {{nome}}</p>
+        </div>
+        <div class="col-3">
+            <p>CPF: {{cpf}}</p>
+        </div>
+        <div class="col-3">
+            <p>Dia de Aniversário: {{diaAniversario}}</p>
+        </div>
+        <div class="col-3">
+            <p>Senha: {{senha}}</p>
+        </div>
+    </div>
+</div>
