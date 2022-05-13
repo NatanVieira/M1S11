@@ -1,0 +1,43 @@
+<div class="modal" id="modalInfo" tabindex="-1" role="dialog" [ngStyle]="{display: displayModal}">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Dados do cliente e cão</h5>
+          <button type="button" class="close" aria-label="Close" (click)="fechaModal()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Nome: {{clientePetShop.nome}}              </p>
+          <p>E-mail: {{clientePetShop.email}}           </p>
+          <p>CPF: {{clientePetShop.cpf}}                </p>
+          <p>Nome do cão: {{clientePetShop.nomeCao}}    </p>
+          <p>Código do cão: {{clientePetShop.codigoCao}}</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+<form #form="ngForm" (submit)="form.valid">
+    <div class="form-group">
+      <label>Nome</label>
+      <input type="text" required="true" name="nome" class="form-control" placeholder="Nome do dono do cão" [(ngModel)]="clientePetShop.nome">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  required="true" name="nome" class="form-control" placeholder="E-mail do dono do cão" [(ngModel)]="clientePetShop.email">
+    </div>
+    <div class="form-group">
+      <label>CPF</label>
+      <input type="text"  name="cpf" required="true" min="11" max="11" class="form-control" placeholder="CPF" [(ngModel)]="clientePetShop.cpf">
+    </div>
+    <div class="form-group">
+        <label>Nome do cão</label>
+        <input type="text" name="nomeCao" required="true" class="form-control" placeholder="Nome do cão" [(ngModel)]="clientePetShop.nomeCao">
+    </div>
+    <div class="form-group">
+        <label>Código do cão</label>
+        <input type="text" name="codigoCao" required="true" class="form-control" placeholder="Código do cão" [(ngModel)]="clientePetShop.codigoCao">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="abreModal()">Mostrar informações</button>
+</form>
