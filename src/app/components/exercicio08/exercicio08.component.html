@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="navbar navbar-dark">
+        <a class="nav-item nav-link" (click)="page = 'Home'">Home</a>
+        <a class="nav-item nav-link" (click)="page = 'Preços'">Preços</a>
+        <a class="nav-item nav-link" (click)="page = 'Informações'">Informações</a>
+    </div>
+</nav>
+<div [ngSwitch]="page">
+    <h1 *ngSwitchDefault="">Nenhuma Página foi escolhida</h1>
+    <h2 *ngSwitchCase="'Home'">Estou na página de Home</h2>
+    <h2 *ngSwitchCase="'Preços'">Estou na página de Preços</h2>
+    <h2 *ngSwitchCase="'Informações'">Estou na página de Informações</h2>
+</div>
