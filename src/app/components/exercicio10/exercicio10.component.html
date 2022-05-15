@@ -1,0 +1,25 @@
+<form #form="ngForm" (submit)="form.valid">
+    <div class="form-group">
+      <label>Nova Atividade</label>
+      <input type="text" name="atividade" class="form-control" placeholder="Digite uma nova atividade" [(ngModel)]="atividade">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="adicionarAtividade()">Adicionar nova atividade</button>
+</form>
+
+<div class="container" *ngIf="listaItens.length > 0">
+    <div class="row">
+        <div class="col-10">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of listaItens">{{item}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container" *ngIf="listaItens.length <= 0">
+    <div class="row">
+        <div class="col-10">
+            <span>Não existe nenhuma atividade para listar.</span>
+        </div>
+    </div>
+</div>
