@@ -1,4 +1,10 @@
 # M1S11
+# Módulo 1 - Semana 11 - Lista de exercicíos
+
+Lista de exercícios da semana 11 do módulo 1 do curso DevInHouse - NDD Tech.
+# Angular, TypeScript.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
 
